@@ -3,7 +3,7 @@ import ipaddress
 def check_ip_in_cidr(ip, cidr_list):
     ip_obj = ipaddress.ip_address(ip)
     for cidr in cidr_list:
-        network = ipaddress.ip_network(cidr)
+        network = ipaddress.ip_network(cidr, false)
         if ip_obj in network:
             return cidr
     return None
